@@ -1,0 +1,15 @@
+# Environment / secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+venv/
+env/
+
+# Uploaded user files
+static/uploads/*
+
+# OS/editor junk
+.vscode/
+.DS_Store
