@@ -1,0 +1,347 @@
+{% extends "base.html" %} {% block title %}Crop Recommendation | AgrowAssist{%
+endblock %} {% block content %} {% set crop_images = { 'Rice': 'rice', 'Maize':
+'maize', 'Jute': 'jute', 'Cotton': 'cotton', 'Coconut': 'coconut', 'Papaya':
+'papaya', 'Orange': 'orange', 'Apple': 'apple', 'Muskmelon': 'muskmelon',
+'Watermelon': 'watermelon', 'Grapes': 'grapes', 'Mango': 'mango', 'Banana':
+'bananan', 'Pomegranate': 'pomo', 'Lentil': 'lent', 'Blackgram': 'black',
+'Mothbeans': 'moth', 'Pigeonpeas': 'peas', 'Kidneybeans': 'kidney', 'Chickpea':
+'chik', 'Coffee': 'coffe' } %}
+
+<div class="page-head">
+  <div class="container">
+    <div class="eyebrow" style="justify-content: center">
+      <span class="dot"></span>22 crops · instant result
+    </div>
+    <h1>Crop Recommendation</h1>
+    <p>
+      Enter your soil and climate readings — AgrowAssist will tell you the best
+      crop to grow.
+    </p>
+  </div>
+</div>
+
+<div class="container py-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-10">
+      <form
+        id="cropRecommendationForm"
+        action="{{ url_for('recommendation') }}"
+        method="POST"
+        data-animate
+      >
+        <div class="field-form">
+          <div class="form-toolbar">
+            <p>
+              Seven readings. Fill them in, or load a sample to see how it
+              works.
+            </p>
+            <button type="button" class="btn-example" id="loadExample">
+              <i class="fas fa-wand-magic-sparkles"></i> Load example
+            </button>
+          </div>
+
+          <!-- SOIL -->
+          <div class="field-section">
+            <div class="field-section-head">
+              <span class="fs-icon"><i class="fas fa-flask"></i></span>
+              <h4>Soil Composition</h4>
+              <span class="fs-count">4 readings</span>
+            </div>
+
+            <div class="field-grid">
+              <div class="field-group">
+                <label for="Nitrogen">Nitrogen (N)</label>
+                <div class="field-input">
+                  <i class="fas fa-flask"></i>
+                  <input
+                    type="number"
+                    step="0.01"
+                    id="Nitrogen"
+                    name="Nitrogen"
+                    placeholder="e.g. 90"
+                    required
+                    value="{{ N if N is not none else '' }}"
+                  />
+                </div>
+                <div class="field-hint">kg/ha · typical 0–150</div>
+                <div class="field-warning">
+                  <i class="fas fa-triangle-exclamation"></i>Outside typical
+                  range
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label for="Phosporus">Phosphorus (P)</label>
+                <div class="field-input">
+                  <i class="fas fa-vial"></i>
+                  <input
+                    type="number"
+                    step="0.01"
+                    id="Phosporus"
+                    name="Phosporus"
+                    placeholder="e.g. 42"
+                    required
+                    value="{{ P if P is not none else '' }}"
+                  />
+                </div>
+                <div class="field-hint">kg/ha · typical 0–150</div>
+                <div class="field-warning">
+                  <i class="fas fa-triangle-exclamation"></i>Outside typical
+                  range
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label for="Potassium">Potassium (K)</label>
+                <div class="field-input">
+                  <i class="fas fa-vials"></i>
+                  <input
+                    type="number"
+                    step="0.01"
+                    id="Potassium"
+                    name="Potassium"
+                    placeholder="e.g. 43"
+                    required
+                    value="{{ K if K is not none else '' }}"
+                  />
+                </div>
+                <div class="field-hint">kg/ha · typical 0–150</div>
+                <div class="field-warning">
+                  <i class="fas fa-triangle-exclamation"></i>Outside typical
+                  range
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label for="Ph">pH Level</label>
+                <div class="field-input">
+                  <i class="fas fa-water"></i>
+                  <input
+                    type="number"
+                    step="0.01"
+                    id="Ph"
+                    name="Ph"
+                    placeholder="e.g. 6.5"
+                    required
+                    value="{{ ph if ph is not none else '' }}"
+                  />
+                </div>
+                <div class="field-hint">scale · typical 0–14</div>
+                <div class="field-warning">
+                  <i class="fas fa-triangle-exclamation"></i>Outside typical
+                  range
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CLIMATE -->
+          <div class="field-section">
+            <div class="field-section-head">
+              <span class="fs-icon"><i class="fas fa-cloud-sun"></i></span>
+              <h4>Climate Conditions</h4>
+              <span class="fs-count">3 readings</span>
+            </div>
+
+            <div class="field-grid">
+              <div class="field-group">
+                <label for="Temperature">Temperature</label>
+                <div class="field-input">
+                  <i class="fas fa-temperature-half"></i>
+                  <input
+                    type="number"
+                    step="0.01"
+                    id="Temperature"
+                    name="Temperature"
+                    placeholder="e.g. 20.9"
+                    required
+                    value="{{ temp if temp is not none else '' }}"
+                  />
+                </div>
+                <div class="field-hint">°C · typical 0–45</div>
+                <div class="field-warning">
+                  <i class="fas fa-triangle-exclamation"></i>Outside typical
+                  range
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label for="Humidity">Humidity</label>
+                <div class="field-input">
+                  <i class="fas fa-droplet"></i>
+                  <input
+                    type="number"
+                    step="0.01"
+                    id="Humidity"
+                    name="Humidity"
+                    placeholder="e.g. 82"
+                    required
+                    value="{{ humidity if humidity is not none else '' }}"
+                  />
+                </div>
+                <div class="field-hint">% · typical 0–100</div>
+                <div class="field-warning">
+                  <i class="fas fa-triangle-exclamation"></i>Outside typical
+                  range
+                </div>
+              </div>
+
+              <div class="field-group">
+                <label for="Rainfall">Rainfall</label>
+                <div class="field-input">
+                  <i class="fas fa-cloud-rain"></i>
+                  <input
+                    type="number"
+                    step="0.01"
+                    id="Rainfall"
+                    name="Rainfall"
+                    placeholder="e.g. 202"
+                    required
+                    value="{{ rainfall if rainfall is not none else '' }}"
+                  />
+                </div>
+                <div class="field-hint">mm/year · typical 100–3000</div>
+                <div class="field-warning">
+                  <i class="fas fa-triangle-exclamation"></i>Outside typical
+                  range
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-primary" id="submitBtn">
+              <span class="spinner"></span>Get Recommendation
+            </button>
+            <a href="{{ url_for('recommendation') }}" class="btn-reset"
+              >Reset</a
+            >
+          </div>
+        </div>
+      </form>
+
+      {% if crop %}
+      <div class="result-hero" id="resultPanel">
+        {% if crop in crop_images %}
+        <img
+          src="{{ url_for('static', filename='images/crops/' ~ crop_images[crop] ~ '.jpg') }}"
+          alt="{{ crop }}"
+          class="result-crop-img"
+        />
+        {% else %}
+        <div class="result-crop-fallback"><i class="fas fa-seedling"></i></div>
+        {% endif %}
+
+        <div class="result-body">
+          <div class="result-eyebrow">Recommended crop</div>
+          <div class="result-crop">{{ crop }}</div>
+          <p>
+            Based on the soil and climate readings you entered, this is the best
+            match across all 22 crops we support.
+          </p>
+          <div class="result-inputs">
+            <span class="result-input-chip">N <b>{{ N }}</b></span>
+            <span class="result-input-chip">P <b>{{ P }}</b></span>
+            <span class="result-input-chip">K <b>{{ K }}</b></span>
+            <span class="result-input-chip">pH <b>{{ ph }}</b></span>
+            <span class="result-input-chip">{{ temp }}<b>°C</b></span>
+            <span class="result-input-chip">{{ humidity }}<b>% RH</b></span>
+            <span class="result-input-chip">{{ rainfall }}<b>mm</b></span>
+          </div>
+        </div>
+      </div>
+      {% elif result %}
+      <div class="result-hero" id="resultPanel">
+        <div class="result-crop-fallback">
+          <i class="fas fa-circle-question"></i>
+        </div>
+        <div class="result-body">
+          <div class="result-eyebrow">Result</div>
+          <div class="result-crop">No match</div>
+          <p>{{ result }}</p>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endblock %} {% block scripts %}
+<script>
+  (function () {
+    const RANGES = {
+      Nitrogen: [0, 150],
+      Phosporus: [0, 150],
+      Potassium: [0, 150],
+      Temperature: [0, 45],
+      Humidity: [0, 100],
+      Ph: [0, 14],
+      Rainfall: [100, 3000],
+    };
+
+    const EXAMPLE = {
+      Nitrogen: 90,
+      Phosporus: 42,
+      Potassium: 43,
+      Temperature: 20.9,
+      Humidity: 82,
+      Ph: 6.5,
+      Rainfall: 202,
+    };
+
+    const form = document.getElementById("cropRecommendationForm");
+    if (!form) return;
+
+    // --- Soft range warnings (never blocks submission) ---
+    Object.keys(RANGES).forEach(function (name) {
+      const input = document.getElementById(name);
+      if (!input) return;
+
+      const wrap = input.closest(".field-input");
+      const warn = input
+        .closest(".field-group")
+        .querySelector(".field-warning");
+
+      function check() {
+        const val = parseFloat(input.value);
+        const [min, max] = RANGES[name];
+        const bad =
+          input.value !== "" && !isNaN(val) && (val < min || val > max);
+        wrap.classList.toggle("is-warning", bad);
+        warn.classList.toggle("is-visible", bad);
+      }
+
+      input.addEventListener("input", check);
+      check();
+    });
+
+    // --- Load example values ---
+    const exampleBtn = document.getElementById("loadExample");
+    if (exampleBtn) {
+      exampleBtn.addEventListener("click", function () {
+        Object.keys(EXAMPLE).forEach(function (name) {
+          const input = document.getElementById(name);
+          if (input) {
+            input.value = EXAMPLE[name];
+            input.dispatchEvent(new Event("input"));
+          }
+        });
+      });
+    }
+
+    // --- Loading state on submit ---
+    form.addEventListener("submit", function () {
+      const btn = document.getElementById("submitBtn");
+      if (btn) btn.classList.add("is-loading");
+    });
+
+    // --- Scroll to result after prediction ---
+    const result = document.getElementById("resultPanel");
+    if (result) {
+      setTimeout(function () {
+        result.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 200);
+    }
+  })();
+</script>
+{% endblock %}

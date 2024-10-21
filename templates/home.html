@@ -1,0 +1,159 @@
+{% extends "base.html" %} {% block title %} Home | AgrowAssist {% endblock %} {%
+block content %}
+
+<!-- ================= HERO ================= -->
+<div class="hero-simple">
+  <div class="container">
+    <div class="banner-frame" data-animate>
+      <div class="banner-img-inner">
+        <img
+          src="{{ url_for('static', filename='images/hero/banner.png') }}"
+          alt="AgrowAssist"
+        />
+      </div>
+      <div class="banner-badge">
+        <i class="fas fa-check-circle"></i> AI-Powered
+      </div>
+    </div>
+
+    <div class="hero-copy" data-animate>
+      <div class="eyebrow" style="justify-content: center">
+        <span class="dot"></span>AI-Powered Agriculture Platform
+      </div>
+      <h1>One platform for everything your farm needs to decide.</h1>
+      <p>
+        AgrowAssist turns your soil and climate readings into a clear crop
+        recommendation — powered by AI, built for real fields.
+      </p>
+      <div class="hero-actions">
+        <a href="#features" class="btn-primary">Explore Features</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= HOW IT WORKS (general) ================= -->
+<div class="section-block" id="how-it-works">
+  <div class="container">
+    <div class="section-head" data-animate>
+      <div class="eyebrow"><span class="dot"></span>How it works</div>
+      <h2 class="section-title">The same three steps, every time.</h2>
+      <p class="section-subtitle">
+        Whichever tool you use, the experience stays simple.
+      </p>
+    </div>
+
+    <div class="row process-list">
+      <div class="col-md-4 mb-4" data-animate>
+        <div class="process-item">
+          <div class="process-icon"><i class="fas fa-hand-pointer"></i></div>
+          <h4>1. Choose a Tool</h4>
+          <p>
+            Pick crop recommendation and enter your field readings.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4" data-animate>
+        <div class="process-item">
+          <div class="process-icon"><i class="fas fa-upload"></i></div>
+          <h4>2. Give Your Input</h4>
+          <p>
+            Enter your field readings, or upload a single photo — that's all it
+            takes.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4" data-animate>
+        <div class="process-item">
+          <div class="process-icon"><i class="fas fa-bolt"></i></div>
+          <h4>3. Get Instant Results</h4>
+          <p>
+            A clear, confident answer in seconds — no guesswork, no waiting.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= FEATURES (equal weight, all clickable) ================= -->
+<div class="section-block" style="padding-top: 0" id="features">
+  <div class="container">
+    <div class="section-head" data-animate>
+      <div class="eyebrow"><span class="dot"></span>What you can do</div>
+      <h2 class="section-title">Built for better crop decisions.</h2>
+    </div>
+
+    <div class="feature-grid" data-animate>
+      <a href="{{ url_for('recommendation') }}" class="feature-card-v2">
+        <div class="capability-icon"><i class="fas fa-seedling"></i></div>
+        <h4>Smart Crop Recommendation</h4>
+        <p>
+          Get personalized crop suggestions based on your soil and climate data.
+        </p>
+        <span class="feature-link"
+          >Try it <i class="fas fa-arrow-right"></i
+        ></span>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- ================= CROP STRIP ================= -->
+<div class="section-block" style="padding-bottom: 40px">
+  <div class="container">
+    <div class="section-head" data-animate>
+      <h2 class="section-title">Crops We Know</h2>
+    </div>
+  </div>
+
+  <div class="crop-strip">
+    {% set crops = [ ('rice','Rice'), ('cotton','Cotton'), ('jute','Jute'),
+    ('papaya','Papaya'), ('maize','Maize'), ('moth','Moth Bean'),
+    ('black','Black Gram'), ('kidney','Kidney Beans'), ('peas','Pigeon Peas'),
+    ('pomo','Pomegranate'), ('coffe','Coffee'), ('muskmelon','Muskmelon'),
+    ('watermelon','Watermelon'), ('chik','Chickpea'), ('bananan','Banana'),
+    ('apple','Apple'), ('grapes','Grapes'), ('orange','Orange'),
+    ('coconut','Coconut'), ('mango','Mango'), ('lent','Lentil') ] %}
+
+    <div class="crop-track dir-a">
+      {% for file, name in crops[:11] + crops[:11] %}
+      <div class="crop-tile">
+        <div class="crop-img-wrap">
+          <img
+            src="{{ url_for('static', filename='images/crops/' ~ file ~ '.jpg') }}"
+            alt="{{ name }}"
+          />
+        </div>
+        <span>{{ name }}</span>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="crop-track dir-b">
+      {% for file, name in crops[11:] + crops[11:] %}
+      <div class="crop-tile">
+        <div class="crop-img-wrap">
+          <img
+            src="{{ url_for('static', filename='images/crops/' ~ file ~ '.jpg') }}"
+            alt="{{ name }}"
+          />
+        </div>
+        <span>{{ name }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<!-- ================= CTA ================= -->
+<div class="container">
+  <div class="cta" data-animate>
+    <h3>Ready to put AI to work on your farm?</h3>
+    <p>One platform for better crop decisions.</p>
+    <a href="#features" class="btn-primary">Explore Features</a>
+  </div>
+</div>
+
+{% endblock %}
