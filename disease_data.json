@@ -1,0 +1,704 @@
+{
+  "Apple___Apple_scab": {
+    "description": "Fungal disease causing olive-green to black lesions on leaves and fruits",
+    "symptoms": [
+      "Velvety lesions with feathery margins",
+      "Premature leaf drop",
+      "Cracked and deformed fruits"
+    ],
+    "solutions": [
+      "Apply myclobutanil or sulfur-based fungicides",
+      "Remove infected plant debris",
+      "Practice summer pruning"
+    ],
+    "preventive_measures": [
+      "Plant resistant cultivars like Liberty",
+      "Maintain 10-15cm branch spacing",
+      "Apply dormant oil sprays in spring"
+    ]
+  },
+  "Apple___Black_rot": {
+    "description": "Fungal disease causing bitter rot in fruits and leaf spots",
+    "symptoms": [
+      "Brown concentric rings on fruits",
+      "V-shaped leaf lesions",
+      "Cankers on twigs"
+    ],
+    "solutions": [
+      "Apply fenbuconazole during bloom",
+      "Remove mummified fruits",
+      "Disinfect pruning tools"
+    ],
+    "preventive_measures": [
+      "Avoid wounding fruits during handling",
+      "Control apple maggot pests",
+      "Use reflective mulch"
+    ]
+  },
+  "Apple___Cedar_apple_rust": {
+    "description": "Gymnosporangium fungal disease requiring juniper hosts",
+    "symptoms": [
+      "Yellow-orange leaf spots",
+      "Galls on juniper trees",
+      "Horn-shaped telial projections"
+    ],
+    "solutions": [
+      "Apply triadimefon fungicides",
+      "Remove nearby juniper hosts",
+      "Use protective netting"
+    ],
+    "preventive_measures": [
+      "Plant resistant varieties like Redfree",
+      "Maintain 200m juniper-free zone",
+      "Apply kaolin clay sprays"
+    ]
+  },
+  "Apple___healthy": {
+    "description": "Normal apple foliage without disease symptoms",
+    "symptoms": [
+      "Uniform green coloration",
+      "Smooth leaf surface",
+      "Symmetrical growth"
+    ],
+    "solutions": [
+      "Maintain current care regimen",
+      "Regular scouting",
+      "Soil nutrient testing"
+    ],
+    "preventive_measures": [
+      "Implement IPM strategies",
+      "Proper irrigation management",
+      "Annual pruning"
+    ]
+  },
+  "Background_without_leaves": {
+    "description": "Non-plant background images for machine learning",
+    "symptoms": [
+      "No visible plant material",
+      "Artificial surfaces/textures",
+      "Natural non-vegetative elements"
+    ],
+    "solutions": [
+      "Exclude from plant analysis",
+      "Improve dataset filtering",
+      "Use segmentation algorithms"
+    ],
+    "preventive_measures": [
+      "Controlled image acquisition",
+      "Background masking",
+      "Data augmentation techniques"
+    ]
+  },
+  "Blueberry___healthy": {
+    "description": "Healthy blueberry plants with normal growth",
+    "symptoms": [
+      "Glossy green leaves",
+      "Uniform berry development",
+      "Firm canes"
+    ],
+    "solutions": [
+      "Maintain soil pH 4.5-5.5",
+      "Apply pine needle mulch",
+      "Monitor for pests"
+    ],
+    "preventive_measures": [
+      "Drip irrigation system",
+      "Bird netting installation",
+      "Annual soil testing"
+    ]
+  },
+  "Cherry___Powdery_mildew": {
+    "description": "Erysiphe fungal growth on leaves and shoots",
+    "symptoms": [
+      "White powdery patches",
+      "Leaf curling",
+      "Stunted shoots"
+    ],
+    "solutions": [
+      "Apply potassium bicarbonate",
+      "Prune dense canopy",
+      "Use milk-water spray"
+    ],
+    "preventive_measures": [
+      "Plant in full sun",
+      "Avoid excess nitrogen",
+      "Space trees 6-8m apart"
+    ]
+  },
+  "Cherry___healthy": {
+    "description": "Disease-free cherry tree with normal growth",
+    "symptoms": [
+      "Smooth bark texture",
+      "Abundant blossoms",
+      "Firm ripe fruits"
+    ],
+    "solutions": [
+      "Maintain 6.5-7.0 soil pH",
+      "Apply balanced fertilizer",
+      "Winter trunk painting"
+    ],
+    "preventive_measures": [
+      "Install windbreaks",
+      "Use trunk guards",
+      "Practice summer pruning"
+    ]
+  },
+  "Corn___Cercospora_leaf_spot_Gray_leaf_spot": {
+    "description": "Fungal disease causing rectangular leaf lesions",
+    "symptoms": [
+      "Gray-brown rectangular spots",
+      "Yellow halos",
+      "Premature senescence"
+    ],
+    "solutions": [
+      "Apply azoxystrobin fungicides",
+      "Rotate with non-host crops",
+      "Destroy crop residue"
+    ],
+    "preventive_measures": [
+      "Use tolerant hybrids",
+      "Avoid continuous corn planting",
+      "Improve field drainage"
+    ]
+  },
+  "Corn___Common_rust": {
+    "description": "Puccinia sorghi fungal infection with pustules",
+    "symptoms": [
+      "Red-brown pustules",
+      "Chlorotic halos",
+      "Tearing of leaf tissue"
+    ],
+    "solutions": [
+      "Apply propiconazole",
+      "Remove volunteer corn",
+      "Increase plant spacing"
+    ],
+    "preventive_measures": [
+      "Plant early-maturing hybrids",
+      "Avoid overhead irrigation",
+      "Apply silicon fertilizers"
+    ]
+  },
+  "Corn___Northern_Leaf_Blight": {
+    "description": "Exserohilum turcicum causing cigar-shaped lesions",
+    "symptoms": [
+      "Elliptical gray-green lesions",
+      "Black fungal sporulation",
+      "Complete defoliation"
+    ],
+    "solutions": [
+      "Apply chlorothalonil",
+      "Deep plow crop debris",
+      "Intercrop with legumes"
+    ],
+    "preventive_measures": [
+      "Use resistant hybrids",
+      "Practice 3-year rotation",
+      "Balanced nitrogen application"
+    ]
+  },
+  "Corn___healthy": {
+    "description": "Healthy corn plants with normal development",
+    "symptoms": [
+      "Deep green coloration",
+      "Uniform spacing between nodes",
+      "Proper ear development"
+    ],
+    "solutions": [
+      "Maintain optimal planting density",
+      "Apply side-dress nitrogen",
+      "Monitor stalk strength"
+    ],
+    "preventive_measures": [
+      "Crop rotation with soybeans",
+      "Conservation tillage",
+      "Soil moisture monitoring"
+    ]
+  },
+  "Grape___Black_rot": {
+    "description": "Guignardia bidwellii causing fruit mummies",
+    "symptoms": [
+      "Brown circular leaf spots",
+      "Black shriveled berries",
+      "Pycnidia on infected tissue"
+    ],
+    "solutions": [
+      "Apply mancozeb during bloom",
+      "Remove infected clusters",
+      "Canopy management"
+    ],
+    "preventive_measures": [
+      "Plant resistant varieties",
+      "Vertical shoot positioning",
+      "Pre-bloom fungicide sprays"
+    ]
+  },
+  "Grape___Esca_(Black_Measles)": {
+    "description": "Complex wood-decay fungal disease",
+    "symptoms": [
+      "Tiger-stripe leaf patterns",
+      "White rot in wood",
+      "Berry speckling"
+    ],
+    "solutions": [
+      "Surgical trunk excision",
+      "Apply borax injections",
+      "Remove infected vines"
+    ],
+    "preventive_measures": [
+      "Avoid mechanical wounds",
+      "Proper pruning techniques",
+      "Use certified disease-free stock"
+    ]
+  },
+  "Grape___Leaf_blight_(Isariopsis_Leaf_Spot)": {
+    "description": "Pseudocercospora vitis causing angular leaf spots",
+    "symptoms": [
+      "Red-brown angular lesions",
+      "Premature defoliation",
+      "Berry sunscald"
+    ],
+    "solutions": [
+      "Apply copper hydroxide",
+      "Improve air circulation",
+      "Remove basal leaves"
+    ],
+    "preventive_measures": [
+      "Avoid water stress",
+      "Maintain balanced vigor",
+      "Sanitize pruning equipment"
+    ]
+  },
+  "Grape___healthy": {
+    "description": "Healthy grapevine with normal growth",
+    "symptoms": [
+      "Uniform leaf size",
+      "Firm green canes",
+      "Plump buds"
+    ],
+    "solutions": [
+      "Maintain trellis system",
+      "Apply compost teas",
+      "Monitor Brix levels"
+    ],
+    "preventive_measures": [
+      "Cordon renewal pruning",
+      "Leaf removal around clusters",
+      "Bird deterrent systems"
+    ]
+  },
+  "Orange___Haunglongbing_(Citrus_greening)": {
+    "description": "Bacterial disease vectored by psyllids",
+    "symptoms": [
+      "Yellow shoots",
+      "Lopsided bitter fruits",
+      "Blotchy leaf mottle"
+    ],
+    "solutions": [
+      "Remove infected trees",
+      "Apply systemic antibiotics",
+      "Psyllid biocontrol"
+    ],
+    "preventive_measures": [
+      "Use certified disease-free plants",
+      "Install insect exclusion nets",
+      "Monitor with yellow sticky traps"
+    ]
+  },
+  "Peach___Bacterial_spot": {
+    "description": "Xanthomonas arboricola pv. pruni infection",
+    "symptoms": [
+      "Angular leaf spots",
+      "Cankerous twig lesions",
+      "Fruit cracking"
+    ],
+    "solutions": [
+      "Apply copper bactericides",
+      "Use windbreak systems",
+      "Prune infected wood"
+    ],
+    "preventive_measures": [
+      "Plant resistant rootstocks",
+      "Avoid overhead irrigation",
+      "Fall urea applications"
+    ]
+  },
+  "Peach___healthy": {
+    "description": "Healthy peach tree without disease",
+    "symptoms": [
+      "Smooth reddish bark",
+      "Lanceolate leaves",
+      "Firm juicy fruits"
+    ],
+    "solutions": [
+      "Monitor for borers",
+      "Summer thinning",
+      "Frost protection"
+    ],
+    "preventive_measures": [
+      "Dormant oil sprays",
+      "Fruit bagging",
+      "Soil pH maintenance"
+    ]
+  },
+  "Pepper,_bell___Bacterial_spot": {
+    "description": "Xanthomonas spp. causing leaf and fruit spots",
+    "symptoms": [
+      "Water-soaked lesions",
+      "Yellow halos",
+      "Fruit corking"
+    ],
+    "solutions": [
+      "Apply acibenzolar-S-methyl",
+      "Hot water seed treatment",
+      "Remove infected plants"
+    ],
+    "preventive_measures": [
+      "Use pathogen-free seeds",
+      "Avoid working when wet",
+      "Practice 3-year rotation"
+    ]
+  },
+  "Pepper,_bell___healthy": {
+    "description": "Healthy pepper plant with normal growth",
+    "symptoms": [
+      "Glossy green leaves",
+      "Uniform fruit set",
+      "Strong stem structure"
+    ],
+    "solutions": [
+      "Maintain even moisture",
+      "Apply calcium supplements",
+      "Stake plants"
+    ],
+    "preventive_measures": [
+      "Row covers for frost",
+      "Companion planting",
+      "Proper hardening-off"
+    ]
+  },
+  "Potato___Early_blight": {
+    "description": "Alternaria solani causing concentric leaf spots",
+    "symptoms": [
+      "Target-pattern lesions",
+      "Defoliation starting from base",
+      "Tuber lesions"
+    ],
+    "solutions": [
+      "Apply chlorothalonil",
+      "Increase potassium fertilization",
+      "Destroy volunteer plants"
+    ],
+    "preventive_measures": [
+      "Use certified seed potatoes",
+      "Avoid wounding tubers",
+      "Practice 4-year rotation"
+    ]
+  },
+  "Potato___Late_blight": {
+    "description": "Phytophthora infestans causing rapid tissue necrosis",
+    "symptoms": [
+      "Water-soaked lesions",
+      "White sporulation undersides",
+      "Rotten tubers"
+    ],
+    "solutions": [
+      "Apply metalaxyl fungicides",
+      "Destroy infected piles",
+      "Harvest before senescence"
+    ],
+    "preventive_measures": [
+      "Plant resistant varieties",
+      "Monitor blight forecasts",
+      "Avoid irrigation during outbreaks"
+    ]
+  },
+  "Potato___healthy": {
+    "description": "Healthy potato plants without disease",
+    "symptoms": [
+      "Upright growth habit",
+      "Uniform tuber size",
+      "Intact epidermis"
+    ],
+    "solutions": [
+      "Maintain hilling regimen",
+      "Monitor soil temperature",
+      "Test for nematodes"
+    ],
+    "preventive_measures": [
+      "Proper curing after harvest",
+      "Green manure crops",
+      "Solarize seed tubers"
+    ]
+  },
+  "Raspberry___healthy": {
+    "description": "Disease-free raspberry canes",
+    "symptoms": [
+      "Vigorous primocanes",
+      "Clean white roots",
+      "Plump drupelets"
+    ],
+    "solutions": [
+      "Renovate planting annually",
+      "Apply organic mulches",
+      "Trellis for air flow"
+    ],
+    "preventive_measures": [
+      "Soil solarization",
+      "Remove floricanes after harvest",
+      "Avoid wetting foliage"
+    ]
+  },
+  "Soybean___healthy": {
+    "description": "Healthy soybean plants without disease",
+    "symptoms": [
+      "Trifoliate leaves",
+      "Pod set at nodes",
+      "Active nitrogen fixation"
+    ],
+    "solutions": [
+      "Inoculate with rhizobia",
+      "Monitor soil potassium",
+      "Scout for aphids"
+    ],
+    "preventive_measures": [
+      "Planting date optimization",
+      "Seed treatment with fungicides",
+      "Maintain field sanitation"
+    ]
+  },
+  "Squash___Powdery_mildew": {
+    "description": "Erysiphe cichoracearum white fungal growth",
+    "symptoms": [
+      "White powdery colonies",
+      "Yellowing leaves",
+      "Reduced fruit size"
+    ],
+    "solutions": [
+      "Apply neem oil",
+      "Use baking soda spray",
+      "Remove infected leaves"
+    ],
+    "preventive_measures": [
+      "Plant resistant varieties",
+      "Avoid dense planting",
+      "Morning irrigation"
+    ]
+  },
+  "Strawberry___Leaf_scorch": {
+    "description": "Diplocarpon earliana fungal infection",
+    "symptoms": [
+      "Purple leaf spots",
+      "Scorched appearance",
+      "Stunted runners"
+    ],
+    "solutions": [
+      "Apply myclobutanil",
+      "Renovate beds annually",
+      "Improve drainage"
+    ],
+    "preventive_measures": [
+      "Plant in raised beds",
+      "Remove old leaves",
+      "Use drip irrigation"
+    ]
+  },
+  "Strawberry___healthy": {
+    "description": "Healthy strawberry plants",
+    "symptoms": [
+      "Dark green leaves",
+      "White flowers",
+      "Uniform fruit ripening"
+    ],
+    "solutions": [
+      "Renovate planting beds",
+      "Apply fish emulsion",
+      "Control weeds"
+    ],
+    "preventive_measures": [
+      "Annual plant replacement",
+      "Floating row covers",
+      "Soil pH maintenance"
+    ]
+  },
+  "Tomato___Bacterial_spot": {
+    "description": "Xanthomonas spp. causing leaf and fruit spots",
+    "symptoms": [
+      "Small water-soaked spots",
+      "Raised scabby fruit lesions",
+      "Marginal necrosis"
+    ],
+    "solutions": [
+      "Apply copper + mancozeb",
+      "Hot water seed treatment",
+      "Remove volunteer plants"
+    ],
+    "preventive_measures": [
+      "Use pathogen-free seed",
+      "Avoid overhead watering",
+      "Sanitize stakes"
+    ]
+  },
+  "Tomato___Early_blight": {
+    "description": "Alternaria solani causing collar rot",
+    "symptoms": [
+      "Bull's-eye leaf lesions",
+      "Stem cankers",
+      "Fruit drop"
+    ],
+    "solutions": [
+      "Apply Bacillus subtilis",
+      "Mulch with plastic",
+      "Remove lower leaves"
+    ],
+    "preventive_measures": [
+      "Stake plants properly",
+      "Prevent nitrogen excess",
+      "Use resistant cultivars"
+    ]
+  },
+  "Tomato___Late_blight": {
+    "description": "Phytophthora infestans causing rapid destruction",
+    "symptoms": [
+      "Greasy gray lesions",
+      "White sporulation",
+      "Rotted green fruits"
+    ],
+    "solutions": [
+      "Apply chlorothalonil",
+      "Destroy infected plants",
+      "Harvest early"
+    ],
+    "preventive_measures": [
+      "Monitor weather forecasts",
+      "Avoid night watering",
+      "Space plants 60cm apart"
+    ]
+  },
+  "Tomato___Leaf_Mold": {
+    "description": "Fulvia fulva causing yellow leaf spots",
+    "symptoms": [
+      "Velvety brown undersides",
+      "Chlorotic upper surfaces",
+      "Defoliation"
+    ],
+    "solutions": [
+      "Apply chlorothalonil",
+      "Increase air circulation",
+      "Lower humidity"
+    ],
+    "preventive_measures": [
+      "Use resistant cultivars",
+      "Avoid wetting leaves",
+      "Sterilize greenhouse surfaces"
+    ]
+  },
+  "Tomato___Septoria_leaf_spot": {
+    "description": "Septoria lycopersici causing numerous small spots",
+    "symptoms": [
+      "Circular gray spots",
+      "Black pycnidia centers",
+      "Yellow halos"
+    ],
+    "solutions": [
+      "Apply copper fungicides",
+      "Remove infected leaves",
+      "Improve air flow"
+    ],
+    "preventive_measures": [
+      "Mulch with straw",
+      "Rotate with corn",
+      "Avoid working when wet"
+    ]
+  },
+  "Tomato___Spider_mites_Two-spotted_spider_mite": {
+    "description": "Tetranychus urticae sap-feeding damage",
+    "symptoms": [
+      "Stippled leaves",
+      "Fine webbing",
+      "Bronzed foliage"
+    ],
+    "solutions": [
+      "Release predatory mites",
+      "Apply abamectin",
+      "Use miticide rotation"
+    ],
+    "preventive_measures": [
+      "Monitor underside leaves",
+      "Avoid dusty conditions",
+      "Control weed hosts"
+    ]
+  },
+  "Tomato___Target_Spot": {
+    "description": "Corynespora cassiicola causing concentric lesions",
+    "symptoms": [
+      "Brown target-like spots",
+      "Shot-hole appearance",
+      "Stem lesions"
+    ],
+    "solutions": [
+      "Apply azoxystrobin",
+      "Remove plant debris",
+      "Improve spacing"
+    ],
+    "preventive_measures": [
+      "Use disease-free seed",
+      "Avoid excess nitrogen",
+      "Practice crop rotation"
+    ]
+  },
+  "Tomato___Tomato_Yellow_Leaf_Curl_Virus": {
+    "description": "Begomovirus transmitted by whiteflies",
+    "symptoms": [
+      "Upward leaf curling",
+      "Yellow leaf margins",
+      "Stunted growth"
+    ],
+    "solutions": [
+      "Remove infected plants",
+      "Apply systemic insecticides",
+      "Use UV-reflective mulch"
+    ],
+    "preventive_measures": [
+      "Install insect-proof nets",
+      "Monitor whitefly populations",
+      "Use resistant varieties"
+    ]
+  },
+  "Tomato___Tomato_mosaic_virus": {
+    "description": "Tobamovirus causing mottling and distortion",
+    "symptoms": [
+      "Fern-leaf pattern",
+      "Fruit internal browning",
+      "Blistering"
+    ],
+    "solutions": [
+      "Remove infected plants",
+      "Disinfect tools",
+      "Control aphids"
+    ],
+    "preventive_measures": [
+      "Use virus-free seed",
+      "Avoid smoking near plants",
+      "Practice crop rotation"
+    ]
+  },
+  "Tomato___healthy": {
+    "description": "Healthy tomato plants without disease",
+    "symptoms": [
+      "Deep green foliage",
+      "Strong central stem",
+      "Uniform fruit set"
+    ],
+    "solutions": [
+      "Prune suckers",
+      "Apply balanced fertilizer",
+      "Monitor blossom-end rot"
+    ],
+    "preventive_measures": [
+      "Proper staking/caging",
+      "Consistent watering",
+      "Soil calcium management"
+    ]
+  }
+}

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="AgrowAssist — AI-powered crop recommendation."
+      content="AgrowAssist — AI-powered crop recommendation and plant disease detection."
     />
 
     <title>{% block title %}AgrowAssist{% endblock %}</title>
@@ -77,6 +77,13 @@
                 >Recommendation</a
               >
             </li>
+            <li class="nav-item">
+              <a
+                class="nav-link {{ 'active-link' if request.endpoint == 'disease' }}"
+                href="{{ url_for('disease') }}"
+                >Disease</a
+              >
+            </li>
             <li class="nav-item ms-lg-3">
               <a
                 class="btn btn-primary btn-sm"
@@ -117,11 +124,13 @@
               <h4 style="margin-bottom: 0">AgrowAssist</h4>
             </div>
             <p>
-              AI-powered crop recommendation for smarter soil and climate decisions.
+              AI-powered smart agricultural assistance for crop recommendation
+              and plant disease detection.
             </p>
             <div class="stack-chips">
               <span class="chip">Flask</span>
               <span class="chip">scikit-learn</span>
+              <span class="chip">TensorFlow Lite</span>
             </div>
           </div>
           <div class="col-md-3">
@@ -132,6 +141,11 @@
                   href="{{ url_for('recommendation') }}"
                   class="footer-link-row"
                   ><i class="fas fa-arrow-right"></i>Crop Recommendation</a
+                >
+              </li>
+              <li>
+                <a href="{{ url_for('disease') }}" class="footer-link-row"
+                  ><i class="fas fa-arrow-right"></i>Disease Detection</a
                 >
               </li>
             </ul>
