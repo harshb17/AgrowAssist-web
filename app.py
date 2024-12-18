@@ -54,9 +54,52 @@ with open("disease_data.json", "r") as f:
 disease_classes = list(disease_info.keys())
 
 
+# ---------------- Fruit Identification Model ---------------- #
+
+fruit_interpreter = tf.lite.Interpreter(
+    model_path="models/fruit_vegetable_classifier_quantized.tflite"
+)
+fruit_interpreter.allocate_tensors()
+
+fruit_input_details = fruit_interpreter.get_input_details()
+fruit_output_details = fruit_interpreter.get_output_details()
+
+with open("labels.txt", "r") as f:
+    fruit_labels = [line.strip() for line in f if line.strip()]
+
+with open("fruit_data.json", "r") as f:
+    fruit_data = json.load(f)
+
+# Known spelling mismatches between labels.txt and fruit_data.json.
+# labels.txt is left untouched since its order must match the trained model exactly.
+FRUIT_NAME_ALIASES = {
+    "raddish": "radish",
+}
+
+
+# ---------------- Health Classifier Model ---------------- #
+
+health_interpreter = tf.lite.Interpreter(
+    model_path="models/fruit_vegetable_healty_classifier.tflite"
+)
+health_interpreter.allocate_tensors()
+
+health_input_details = health_interpreter.get_input_details()
+health_output_details = health_interpreter.get_output_details()
+
+with open("class_names.txt", "r") as f:
+    health_labels = [line.strip() for line in f if line.strip()]
+
+
 print("✅ Crop Recommendation Model Loaded")
 print("✅ Disease Detection Model Loaded")
 print(f"✅ Disease Classes Loaded: {len(disease_info)}")
+print("✅ Fruit Identification Model Loaded")
+print(f"✅ Fruit Labels Loaded: {len(fruit_labels)}")
+print("✅ Health Classifier Model Loaded")
+print(f"✅ Health Classes Loaded: {len(health_labels)}")
+
+
 # ==========================
 # Disease Prediction Function
 # ==========================
@@ -87,6 +130,94 @@ def predict_disease(image_path):
     class_name = disease_classes[predicted_index]
 
     return class_name, confidence
+
+
+# ==========================
+# Fruit Identification Function
+# ==========================
+
+FRUIT_CONFIDENCE_THRESHOLD = 50  # matches Flutter app
+
+
+def predict_fruit(image_path):
+
+    try:
+        img = Image.open(image_path).convert("RGB")
+    except Exception:
+        return None, 0
+
+    input_shape = fruit_input_details[0]["shape"]
+    height = input_shape[1]
+    width = input_shape[2]
+
+    img = img.resize((width, height))
+    img = np.array(img, dtype=np.float32) / 255.0
+    img = np.expand_dims(img, axis=0)
+
+    fruit_interpreter.set_tensor(fruit_input_details[0]["index"], img)
+    fruit_interpreter.invoke()
+
+    output = fruit_interpreter.get_tensor(fruit_output_details[0]["index"])[0]
+
+    predicted_index = int(np.argmax(output))
+    confidence = float(output[predicted_index] * 100)
+
+    if confidence < FRUIT_CONFIDENCE_THRESHOLD:
+        return "Low confidence prediction", 0
+
+    class_name = fruit_labels[predicted_index]
+    return class_name, confidence
+
+
+def get_fruit_info(fruit_name):
+    """Case-insensitive lookup by 'name' field, matches Dart _getFruitInfo()."""
+    if not fruit_name:
+        return None
+
+    normalized = fruit_name.lower().strip()
+    normalized = FRUIT_NAME_ALIASES.get(normalized, normalized)
+
+    for fruit in fruit_data:
+        if str(fruit.get("name", "")).lower() == normalized:
+            return fruit
+
+    return None
+
+
+# ==========================
+# Health Classification Function
+# ==========================
+
+HEALTH_CONFIDENCE_THRESHOLD = 50  # matches Flutter app
+
+
+def predict_health(image_path):
+
+    try:
+        img = Image.open(image_path).convert("RGB")
+    except Exception:
+        return None, 0
+
+    input_shape = health_input_details[0]["shape"]
+    height = input_shape[1]
+    width = input_shape[2]
+
+    img = img.resize((width, height))
+    img = np.array(img, dtype=np.float32) / 255.0
+    img = np.expand_dims(img, axis=0)
+
+    health_interpreter.set_tensor(health_input_details[0]["index"], img)
+    health_interpreter.invoke()
+
+    output = health_interpreter.get_tensor(health_output_details[0]["index"])[0]
+
+    predicted_index = int(np.argmax(output))
+    confidence = float(output[predicted_index] * 100)
+    class_name = health_labels[predicted_index]
+
+    # confidence is returned as-is even when low, matching the Flutter app
+    return class_name, confidence
+
 
 # ==========================
 # HOME
@@ -179,6 +310,104 @@ def predict_disease_route():
         disease=disease_name,
         confidence=round(confidence, 2),
         details=disease_details,
+    )
+
+
+# ==========================
+# FRUIT IDENTIFICATION
+# ==========================
+
+@app.route("/identify")
+def identify():
+    return render_template("identify.html")
+
+
+@app.route("/predict-fruit", methods=["POST"])
+def predict_fruit_route():
+
+    if "image" not in request.files:
+        return render_template("identify.html", error="Please select an image.")
+
+    file = request.files["image"]
+
+    if file.filename == "":
+        return render_template("identify.html", error="No image selected.")
+
+    if not allowed_file(file.filename):
+        return render_template("identify.html", error="Only PNG, JPG and JPEG files are allowed.")
+
+    filename = secure_filename(file.filename)
+    filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
+    file.save(filepath)
+
+    fruit_name, confidence = predict_fruit(filepath)
+
+    if fruit_name is None:
+        return render_template("identify.html", error="Unable to process image.")
+
+    if fruit_name == "Low confidence prediction":
+        return render_template(
+            "identify.html",
+            image_path=filepath.replace("\\", "/"),
+            low_confidence=True,
+        )
+
+    info = get_fruit_info(fruit_name)
+
+    return render_template(
+        "identify.html",
+        image_path=filepath.replace("\\", "/"),
+        fruit=fruit_name,
+        confidence=round(confidence, 2),
+        info=info,
+    )
+
+
+# ==========================
+# HEALTH CLASSIFIER
+# ==========================
+
+@app.route("/health")
+def health():
+    return render_template("health.html")
+
+
+@app.route("/predict-health", methods=["POST"])
+def predict_health_route():
+
+    if "image" not in request.files:
+        return render_template("health.html", error="Please select an image.")
+
+    file = request.files["image"]
+
+    if file.filename == "":
+        return render_template("health.html", error="No image selected.")
+
+    if not allowed_file(file.filename):
+        return render_template("health.html", error="Only PNG, JPG and JPEG files are allowed.")
+
+    filename = secure_filename(file.filename)
+    filepath = os.path.join(app.config["UPLOAD_FOLDER"], filename)
+    file.save(filepath)
+
+    class_name, confidence = predict_health(filepath)
+
+    if class_name is None:
+        return render_template("health.html", error="Unable to process image.")
+
+    low_confidence = confidence < HEALTH_CONFIDENCE_THRESHOLD
+
+    fruit_name, status = (
+        class_name.split("__", 1) if "__" in class_name else (class_name, None)
+    )
+
+    return render_template(
+        "health.html",
+        image_path=filepath.replace("\\", "/"),
+        fruit_name=fruit_name,
+        status=status,
+        confidence=round(confidence, 2),
+        low_confidence=low_confidence,
     )
 
 

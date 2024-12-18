@@ -22,8 +22,9 @@ block content %}
       </div>
       <h1>One platform for everything your farm needs to decide.</h1>
       <p>
-        AgrowAssist brings crop recommendation and plant disease detection
-        together — powered by AI, built for real fields.
+        AgrowAssist brings crop recommendation, disease detection, produce
+        identification, and health checks together — powered by AI, built for
+        real fields.
       </p>
       <div class="hero-actions">
         <a href="#features" class="btn-primary">Explore Features</a>
@@ -49,7 +50,8 @@ block content %}
           <div class="process-icon"><i class="fas fa-hand-pointer"></i></div>
           <h4>1. Choose a Tool</h4>
           <p>
-            Pick crop recommendation or a plant disease check.
+            Pick crop recommendation, disease check, identification, or a health
+            scan.
           </p>
         </div>
       </div>
@@ -81,7 +83,7 @@ block content %}
   <div class="container">
     <div class="section-head" data-animate>
       <div class="eyebrow"><span class="dot"></span>What you can do</div>
-      <h2 class="section-title">Two tools. One farm assistant.</h2>
+      <h2 class="section-title">Four tools. One farm assistant.</h2>
     </div>
 
     <div class="feature-grid" data-animate>
@@ -100,6 +102,26 @@ block content %}
         <div class="capability-icon"><i class="fas fa-bug"></i></div>
         <h4>Disease Prediction</h4>
         <p>Detect and identify crop diseases early, before they spread.</p>
+        <span class="feature-link"
+          >Try it <i class="fas fa-arrow-right"></i
+        ></span>
+      </a>
+
+      <a href="{{ url_for('identify') }}" class="feature-card-v2">
+        <div class="capability-icon">
+          <i class="fas fa-magnifying-glass"></i>
+        </div>
+        <h4>Crop &amp; Fruit Identification</h4>
+        <p>Instantly identify fruits and vegetables from a single photo.</p>
+        <span class="feature-link"
+          >Try it <i class="fas fa-arrow-right"></i
+        ></span>
+      </a>
+
+      <a href="{{ url_for('health') }}" class="feature-card-v2">
+        <div class="capability-icon"><i class="fas fa-heart-pulse"></i></div>
+        <h4>Fruit Health Classification</h4>
+        <p>Check whether your produce is healthy or spoiled, at a glance.</p>
         <span class="feature-link"
           >Try it <i class="fas fa-arrow-right"></i
         ></span>
@@ -160,7 +182,7 @@ block content %}
 <div class="container">
   <div class="cta" data-animate>
     <h3>Ready to put AI to work on your farm?</h3>
-    <p>Two tools, one platform, zero guesswork.</p>
+    <p>Four tools, one platform, zero guesswork.</p>
     <a href="#features" class="btn-primary">Explore Features</a>
   </div>
 </div>

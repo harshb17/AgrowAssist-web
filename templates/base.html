@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="AgrowAssist — AI-powered crop recommendation and plant disease detection."
+      content="AgrowAssist — AI-powered crop recommendation, disease detection, and fruit identification."
     />
 
     <title>{% block title %}AgrowAssist{% endblock %}</title>
@@ -84,6 +84,20 @@
                 >Disease</a
               >
             </li>
+            <li class="nav-item">
+              <a
+                class="nav-link {{ 'active-link' if request.endpoint == 'identify' }}"
+                href="{{ url_for('identify') }}"
+                >Identify</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link {{ 'active-link' if request.endpoint == 'health' }}"
+                href="{{ url_for('health') }}"
+                >Health</a
+              >
+            </li>
             <li class="nav-item ms-lg-3">
               <a
                 class="btn btn-primary btn-sm"
@@ -124,8 +138,8 @@
               <h4 style="margin-bottom: 0">AgrowAssist</h4>
             </div>
             <p>
-              AI-powered smart agricultural assistance for crop recommendation
-              and plant disease detection.
+              AI-powered smart agricultural assistance for crop recommendation,
+              disease detection, fruit identification, and freshness checks.
             </p>
             <div class="stack-chips">
               <span class="chip">Flask</span>
@@ -146,6 +160,16 @@
               <li>
                 <a href="{{ url_for('disease') }}" class="footer-link-row"
                   ><i class="fas fa-arrow-right"></i>Disease Detection</a
+                >
+              </li>
+              <li>
+                <a href="{{ url_for('identify') }}" class="footer-link-row"
+                  ><i class="fas fa-arrow-right"></i>Fruit Identification</a
+                >
+              </li>
+              <li>
+                <a href="{{ url_for('health') }}" class="footer-link-row"
+                  ><i class="fas fa-arrow-right"></i>Health Classifier</a
                 >
               </li>
             </ul>
