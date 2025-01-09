@@ -28,6 +28,9 @@ block content %}
       </p>
       <div class="hero-actions">
         <a href="#features" class="btn-primary">Explore Features</a>
+        <a href="{{ url_for('information') }}" class="btn-outline"
+          >Learn More</a
+        >
       </div>
     </div>
   </div>
@@ -83,7 +86,7 @@ block content %}
   <div class="container">
     <div class="section-head" data-animate>
       <div class="eyebrow"><span class="dot"></span>What you can do</div>
-      <h2 class="section-title">Four tools. One farm assistant.</h2>
+      <h2 class="section-title">Five tools. One farm assistant.</h2>
     </div>
 
     <div class="feature-grid" data-animate>
@@ -127,6 +130,14 @@ block content %}
         ></span>
       </a>
 
+      <a href="{{ url_for('analytics') }}" class="feature-card-v2">
+        <div class="capability-icon"><i class="fas fa-chart-line"></i></div>
+        <h4>Crop Analytics</h4>
+        <p>Get comprehensive insights into crop performance over time.</p>
+        <span class="feature-link"
+          >Try it <i class="fas fa-arrow-right"></i
+        ></span>
+      </a>
     </div>
   </div>
 </div>
@@ -182,7 +193,7 @@ block content %}
 <div class="container">
   <div class="cta" data-animate>
     <h3>Ready to put AI to work on your farm?</h3>
-    <p>Four tools, one platform, zero guesswork.</p>
+    <p>Five tools, one platform, zero guesswork.</p>
     <a href="#features" class="btn-primary">Explore Features</a>
   </div>
 </div>

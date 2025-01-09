@@ -98,6 +98,27 @@
                 >Health</a
               >
             </li>
+            <li class="nav-item">
+              <a
+                class="nav-link {{ 'active-link' if request.endpoint == 'analytics' }}"
+                href="{{ url_for('analytics') }}"
+                >Analytics</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link {{ 'active-link' if request.endpoint == 'information' }}"
+                href="{{ url_for('information') }}"
+                >Information</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link {{ 'active-link' if request.endpoint == 'about' }}"
+                href="{{ url_for('about') }}"
+                >About</a
+              >
+            </li>
             <li class="nav-item ms-lg-3">
               <a
                 class="btn btn-primary btn-sm"
@@ -139,12 +160,13 @@
             </div>
             <p>
               AI-powered smart agricultural assistance for crop recommendation,
-              disease detection, fruit identification, and freshness checks.
+              disease detection, fruit identification, and crop analytics.
             </p>
             <div class="stack-chips">
               <span class="chip">Flask</span>
               <span class="chip">scikit-learn</span>
               <span class="chip">TensorFlow Lite</span>
+              <span class="chip">Power BI</span>
             </div>
           </div>
           <div class="col-md-3">
@@ -170,6 +192,11 @@
               <li>
                 <a href="{{ url_for('health') }}" class="footer-link-row"
                   ><i class="fas fa-arrow-right"></i>Health Classifier</a
+                >
+              </li>
+              <li>
+                <a href="{{ url_for('analytics') }}" class="footer-link-row"
+                  ><i class="fas fa-arrow-right"></i>Analytics</a
                 >
               </li>
             </ul>

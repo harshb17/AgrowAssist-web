@@ -38,6 +38,17 @@ CROP_DICT = {
     20: "Kidneybeans", 21: "Chickpea", 22: "Coffee",
 }
 
+
+def humanize_label(raw):
+    """Converts raw class names like 'Apple___Apple_scab' or 'Apple__Healthy'
+    into readable labels like 'Apple - Apple Scab'."""
+    text = raw.replace(",", "")
+    text = text.replace("___", " - ").replace("__", " - ")
+    text = text.replace("_", " ")
+    text = " ".join(text.split())
+    return text.title()
+
+
 # ---------------- Disease Detection Model ---------------- #
 
 interpreter = tf.lite.Interpreter(
@@ -409,6 +420,44 @@ def predict_health_route():
         confidence=round(confidence, 2),
         low_confidence=low_confidence,
     )
+
+
+# ==========================
+# ANALYTICS
+# ==========================
+
+@app.route("/analytics")
+def analytics():
+    return render_template("analytics.html")
+
+
+# ==========================
+# INFORMATION
+# ==========================
+
+@app.route("/information")
+def information():
+    fruit_list = sorted(label.title() for label in fruit_labels)
+    disease_list = sorted(humanize_label(c) for c in disease_classes)
+    crop_list = [CROP_DICT[k] for k in sorted(CROP_DICT)]
+    health_list = sorted(humanize_label(c) for c in health_labels)
+
+    return render_template(
+        "information.html",
+        fruit_list=fruit_list,
+        disease_list=disease_list,
+        crop_list=crop_list,
+        health_list=health_list,
+    )
+
+
+# ==========================
+# ABOUT
+# ==========================
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 
 # ==========================

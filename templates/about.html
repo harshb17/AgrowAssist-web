@@ -1,0 +1,148 @@
+{% extends "base.html" %} {% block title %}About | AgrowAssist{% endblock %} {%
+block content %}
+
+<div class="page-head">
+  <div class="container">
+    <div class="eyebrow" style="justify-content: center">
+      <span class="dot"></span>About
+    </div>
+    <h1>The Story Behind AgrowAssist</h1>
+    <p>What it is, why it exists, and who built it.</p>
+  </div>
+</div>
+
+<div class="container py-4">
+  <div class="about-hero" data-animate>
+    <div class="about-avatar">GC</div>
+    <div class="about-hero-text">
+      <h2>Gunjankumar Choudhari</h2>
+      <div class="about-role">
+        Computer Engineering Graduate · Incoming Systems Engineer @ TCS
+      </div>
+      <p>
+        Built AgrowAssist end-to-end — from the Flutter mobile app to this web
+        platform — covering data collection, model training, and the full-stack
+        build.
+      </p>
+      <div class="about-links">
+        <a
+          href="https://github.com/Gunjankumar55"
+          target="_blank"
+          rel="noopener"
+          class="about-link-btn"
+        >
+          <i class="fab fa-github"></i> GitHub
+        </a>
+        <a
+          href="https://gunjankumar55.github.io/"
+          target="_blank"
+          rel="noopener"
+          class="about-link-btn"
+        >
+          <i class="fas fa-globe"></i> Portfolio
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-4">
+    <div class="col-lg-7 mb-4" data-animate>
+      <div class="story-block h-100">
+        <h3>Why AgrowAssist</h3>
+        <p>
+          Farmers make decisions with incomplete information — what to plant,
+          whether a crop is diseased, whether produce is still sellable.
+          AgrowAssist puts four AI models behind those decisions: crop
+          recommendation from soil and climate data, disease detection from a
+          single photo, produce identification with nutrition data, and a
+          healthy-vs-rotten check.
+        </p>
+        <p>
+          The mobile app came first. This website is the same models, the same
+          data, rebuilt as a browser-based platform — so the tools work without
+          an install.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-lg-5 mb-4" data-animate>
+      <div class="story-block h-100">
+        <h3>What's Live</h3>
+        <div class="roadmap-item">
+          <div class="rm-check"><i class="fas fa-check"></i></div>
+          <span>Crop Recommendation — 22 crops</span>
+        </div>
+        <div class="roadmap-item">
+          <div class="rm-check"><i class="fas fa-check"></i></div>
+          <span>Disease Detection — 39 classes</span>
+        </div>
+        <div class="roadmap-item">
+          <div class="rm-check"><i class="fas fa-check"></i></div>
+          <span>Fruit &amp; Vegetable Identification — 41 classes</span>
+        </div>
+        <div class="roadmap-item">
+          <div class="rm-check"><i class="fas fa-check"></i></div>
+          <span>Health Classifier — 14 fruits, healthy/rotten</span>
+        </div>
+        <div class="roadmap-item">
+          <div class="rm-check"><i class="fas fa-check"></i></div>
+          <span>Live Analytics dashboard</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-head mt-4" data-animate>
+    <div class="eyebrow"><span class="dot"></span>Source</div>
+    <h2 class="section-title">Two Codebases, One Product</h2>
+    <p class="section-subtitle">
+      The mobile app and this website are built and maintained separately,
+      sharing the same models and data.
+    </p>
+  </div>
+
+  <div class="row" data-animate>
+    <div class="col-md-6 mb-4">
+      <a
+        href="https://github.com/Gunjankumar55/Crop-Recommendation-ML"
+        target="_blank"
+        rel="noopener"
+        style="text-decoration: none"
+      >
+        <div class="repo-card">
+          <div class="repo-icon"><i class="fas fa-globe"></i></div>
+          <div>
+            <h5>AgrowAssist Web</h5>
+            <p>Flask · HTML/CSS/JS — this website</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-md-6 mb-4">
+      <a
+        href="https://github.com/Gunjankumar55/Agroassist----Smart-Agricultural-Assistance-System-App"
+        target="_blank"
+        rel="noopener"
+        style="text-decoration: none"
+      >
+        <div class="repo-card">
+          <div class="repo-icon"><i class="fas fa-mobile-screen"></i></div>
+          <div>
+            <h5>AgrowAssist Mobile</h5>
+            <p>Flutter — the original Android app</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+
+  <div class="cta mt-4" data-animate>
+    <h3>Curious how it works under the hood?</h3>
+    <p>Every crop, disease, and produce class the models recognize.</p>
+    <a href="{{ url_for('information') }}" class="btn-primary"
+      >View Reference</a
+    >
+  </div>
+</div>
+
+{% endblock %}
