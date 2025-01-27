@@ -5,3 +5,5 @@ numpy<2.0
 tensorflow==2.15.0
 scikit-learn==1.5.0
 Pillow
+python-dotenv
+google-genai

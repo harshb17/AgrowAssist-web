@@ -6,6 +6,11 @@ import json
 from PIL import Image
 import os
 from werkzeug.utils import secure_filename
+from dotenv import load_dotenv
+from google import genai
+from google.genai import types
+
+load_dotenv()
 
 app = Flask(__name__)
 
@@ -100,6 +105,35 @@ health_output_details = health_interpreter.get_output_details()
 
 with open("class_names.txt", "r") as f:
     health_labels = [line.strip() for line in f if line.strip()]
+
+
+# ---------------- Gemini Chatbot ---------------- #
+
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
+gemini_client = None
+
+if GEMINI_API_KEY:
+    try:
+        gemini_client = genai.Client(api_key=GEMINI_API_KEY)
+        print("✅ Gemini Chatbot Configured")
+    except Exception as e:
+        print(f"⚠️  Gemini setup failed: {e}")
+else:
+    print("⚠️  GEMINI_API_KEY not set — chatbot disabled")
+
+CHATBOT_SYSTEM_INSTRUCTION = """You are AgroBot, the assistant for AgrowAssist, an AI agriculture platform.
+
+Only answer questions about: farming, crops, soil, plant diseases, produce, nutrition, and how to use AgrowAssist's tools (crop recommendation, disease detection, fruit identification, health classifier, analytics).
+
+If asked something unrelated to agriculture, politely say you're focused on farming topics and redirect back.
+
+When relevant, point users to the right tool:
+- Soil/climate questions -> suggest /recommendation
+- A sick-looking plant -> suggest /disease
+- Identifying produce -> suggest /identify
+- Checking if produce is spoiled -> suggest /health
+
+Keep answers short — 2 to 4 sentences unless the user asks for more detail."""
 
 
 print("✅ Crop Recommendation Model Loaded")
@@ -458,6 +492,52 @@ def information():
 @app.route("/about")
 def about():
     return render_template("about.html")
+
+
+# ==========================
+# CHATBOT
+# ==========================
+
+@app.route("/chat", methods=["POST"])
+def chat():
+    data = request.get_json(silent=True) or {}
+    user_message = (data.get("message") or "").strip()
+    history = data.get("history") or []
+
+    if not user_message:
+        return jsonify({"error": "Empty message."}), 400
+
+    if len(user_message) > 500:
+        return jsonify({"error": "Message too long."}), 400
+
+    if gemini_client is None:
+        return jsonify({"error": "Chatbot is not configured."}), 503
+
+    try:
+        gemini_history = []
+        for turn in history[-10:]:  # cap context sent per request
+            role = "user" if turn.get("role") == "user" else "model"
+            gemini_history.append(
+                types.Content(role=role, parts=[types.Part(text=turn.get("text", ""))])
+            )
+
+        chat_session = gemini_client.chats.create(
+            model="gemini-3.6-flash",
+            config=types.GenerateContentConfig(
+                system_instruction=CHATBOT_SYSTEM_INSTRUCTION,
+                max_output_tokens=300,
+            ),
+            history=gemini_history,
+        )
+
+        response = chat_session.send_message(user_message)
+        reply = response.text
+
+    except Exception as e:
+        print("Gemini error:", e)
+        return jsonify({"error": "Something went wrong. Please try again."}), 500
+
+    return jsonify({"reply": reply})
 
 
 # ==========================
