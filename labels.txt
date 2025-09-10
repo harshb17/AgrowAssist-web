@@ -1,0 +1,41 @@
+apple
+avocado
+banana
+beetroot
+bell pepper
+cabbage
+capsicum
+carrot
+cauliflower
+cherry
+chilli pepper
+corn
+cucumber
+eggplant
+garlic
+ginger
+grapes
+guava
+jalepeno
+kiwi
+lemon
+lettuce
+mango
+onion
+orange
+papaya
+paprika
+pear
+peas
+pineapple
+pomegranate
+potato
+raddish
+soy beans
+spinach
+strawberries
+sweetcorn
+sweetpotato
+tomato
+turnip
+watermelon

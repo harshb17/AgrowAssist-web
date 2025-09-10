@@ -1,0 +1,249 @@
+[
+    {
+      "name": "Apple",
+      "description": "A crisp and sweet fruit high in fiber and antioxidants",
+      "calories": 59,
+      "vitamins": ["Vitamin C", "Vitamin A"]
+    },
+    {
+      "name": "Avocado",
+      "description": "A creamy fruit with high healthy fat content and numerous nutrients",
+      "calories": 215,
+      "vitamins": ["Vitamin K", "Vitamin E", "Vitamin B5", "Vitamin B9 (Folate)"]
+    },
+    {
+      "name": "Banana",
+      "description": "A sweet tropical fruit rich in carbohydrates and potassium",
+      "calories": 116,
+      "vitamins": ["Vitamin B6", "Vitamin C"]
+    },
+    {
+      "name": "Beetroot",
+      "description": "A root vegetable with vibrant color and earthy flavor",
+      "calories": 43,
+      "vitamins": ["Folate (B9)", "Vitamin C"]
+    },
+    {
+      "name": "Bell pepper",
+      "description": "A colorful vegetable with sweet, crisp flesh and hollow interior",
+      "calories": 30,
+      "vitamins": ["Vitamin C", "Vitamin A", "Vitamin B6"]
+    },
+    {
+      "name": "Cabbage",
+      "description": "A leafy vegetable with dense, layered leaves forming a compact head",
+      "calories": 25,
+      "vitamins": ["Vitamin C", "Vitamin K"]
+    },
+    {
+      "name": "Capsicum",
+      "description": "Another name for bell pepper, a sweet, crunchy vegetable",
+      "calories": 30,
+      "vitamins": ["Vitamin C", "Vitamin A", "Vitamin B6"]
+    },
+    {
+      "name": "Carrot",
+      "description": "An orange root vegetable known for its high beta-carotene content",
+      "calories": 41,
+      "vitamins": ["Vitamin A", "Vitamin K1", "Vitamin B6"]
+    },
+    {
+      "name": "Cauliflower",
+      "description": "A cruciferous vegetable with a compact head of undeveloped white flower buds",
+      "calories": 25,
+      "vitamins": ["Vitamin C", "Vitamin K", "B Vitamins"]
+    },
+    {
+      "name": "Cherry",
+      "description": "A small, round stone fruit with sweet or tart flavor",
+      "calories": 64,
+      "vitamins": ["Vitamin C", "Vitamin A"]
+    },
+    {
+      "name": "Chilli pepper",
+      "description": "A spicy pepper variety used to add heat to dishes",
+      "calories": 40,
+      "vitamins": ["Vitamin C", "Vitamin A"]
+    },
+    {
+      "name": "Corn",
+      "description": "A starchy vegetable with sweet, juicy kernels on a cob",
+      "calories": 86,
+      "vitamins": ["Vitamin B1", "Vitamin B5", "Vitamin C"]
+    },
+    {
+      "name": "Cucumber",
+      "description": "A refreshing vegetable with high water content and mild flavor",
+      "calories": 15,
+      "vitamins": ["Vitamin K", "Vitamin C"]
+    },
+    {
+      "name": "Eggplant",
+      "description": "A glossy, purple vegetable with spongy, absorbent flesh",
+      "calories": 25,
+      "vitamins": ["Vitamin B1", "Vitamin B6", "Vitamin K"]
+    },
+    {
+      "name": "Garlic",
+      "description": "A pungent bulb used as a flavor enhancer in cooking",
+      "calories": 149,
+      "vitamins": ["Vitamin B6", "Vitamin C"]
+    },
+    {
+      "name": "Ginger",
+      "description": "A spicy rhizome used for flavoring in cooking and traditional medicine",
+      "calories": 80,
+      "vitamins": ["Vitamin B6", "Vitamin C"]
+    },
+    {
+      "name": "Grapes",
+      "description": "Small, juicy berries growing in clusters on vines",
+      "calories": 69,
+      "vitamins": ["Vitamin C", "Vitamin K"]
+    },
+    {
+      "name": "Guava",
+      "description": "A tropical fruit with fragrant flesh and edible seeds",
+      "calories": 51,
+      "vitamins": ["Vitamin C", "Vitamin A"]
+    },
+    {
+      "name": "Jalepeno",
+      "description": "A medium-sized chili pepper with moderate heat",
+      "calories": 30,
+      "vitamins": ["Vitamin C", "Vitamin A", "Vitamin K"]
+    },
+    {
+      "name": "Kiwi",
+      "description": "A small fruit with fuzzy brown skin and bright green flesh",
+      "calories": 61,
+      "vitamins": ["Vitamin C", "Vitamin K", "Vitamin E"]
+    },
+    {
+      "name": "Lemon",
+      "description": "A citrus fruit with sour, acidic juice used in cooking and beverages",
+      "calories": 57,
+      "vitamins": ["Vitamin C"]
+    },
+    {
+      "name": "Lettuce",
+      "description": "A leafy green vegetable commonly used in salads and sandwiches",
+      "calories": 15,
+      "vitamins": ["Vitamin A", "Vitamin K"]
+    },
+    {
+      "name": "Mango",
+      "description": "A juicy tropical fruit with sweet, fibrous flesh",
+      "calories": 74,
+      "vitamins": ["Vitamin C", "Vitamin A"]
+    },
+    {
+      "name": "Onion",
+      "description": "A pungent bulb vegetable used as a base in many cuisines",
+      "calories": 40,
+      "vitamins": ["Vitamin C", "Vitamin B6"]
+    },
+    {
+      "name": "Orange",
+      "description": "A citrus fruit known for its tangy sweetness and high vitamin C content",
+      "calories": 48,
+      "vitamins": ["Vitamin C", "Vitamin A"]
+    },
+    {
+      "name": "Papaya",
+      "description": "A tropical fruit with sweet orange flesh and black seeds",
+      "calories": 32,
+      "vitamins": ["Vitamin C", "Vitamin A", "Folate"]
+    },
+    {
+      "name": "Paprika",
+      "description": "A spice made from dried and ground red peppers",
+      "calories": 282,
+      "vitamins": ["Vitamin A", "Vitamin E"]
+    },
+    {
+      "name": "Pear",
+      "description": "A sweet fruit with a grainy flesh and distinctive teardrop shape",
+      "calories": 52,
+      "vitamins": ["Vitamin C", "Vitamin K"]
+    },
+    {
+      "name": "Peas",
+      "description": "Small round green legumes that grow in pods",
+      "calories": 84,
+      "vitamins": ["Vitamin A", "Vitamin C", "Vitamin K", "B Vitamins"]
+    },
+    {
+      "name": "Pineapple",
+      "description": "A tropical fruit with sweet and tangy flavor and distinctive appearance",
+      "calories": 46,
+      "vitamins": ["Vitamin C", "Vitamin B6"]
+    },
+    {
+      "name": "Pomegranate",
+      "description": "A fruit with red seeds called arils encased in a leathery rind",
+      "calories": 65,
+      "vitamins": ["Vitamin C", "Vitamin K"]
+    },
+    {
+      "name": "Potato",
+      "description": "A starchy root vegetable that is a staple food in many cultures",
+      "calories": 77,
+      "vitamins": ["Vitamin C", "Vitamin B6"]
+    },
+    {
+      "name": "Radish",
+      "description": "A crunchy root vegetable with a peppery flavor",
+      "calories": 16,
+      "vitamins": ["Vitamin C"]
+    },
+    {
+      "name": "Soy beans",
+      "description": "Protein-rich legumes used to make various food products",
+      "calories": 173,
+      "vitamins": ["Vitamin K", "B Vitamins", "Vitamin C"]
+    },
+    {
+      "name": "Spinach",
+      "description": "A leafy green vegetable packed with nutrients",
+      "calories": 23,
+      "vitamins": ["Vitamin A", "Vitamin C", "Vitamin K", "Folate"]
+    },
+    {
+      "name": "Strawberries",
+      "description": "Sweet red berries with seeds on the outer surface",
+      "calories": 44,
+      "vitamins": ["Vitamin C"]
+    },
+    {
+      "name": "Sweetcorn",
+      "description": "A variety of corn with higher sugar content",
+      "calories": 86,
+      "vitamins": ["Vitamin B1", "Vitamin B5", "Vitamin C"]
+    },
+    {
+      "name": "Sweetpotato",
+      "description": "A starchy root vegetable with sweet orange flesh",
+      "calories": 86,
+      "vitamins": ["Vitamin A", "Vitamin C", "Vitamin B6"]
+    },
+    {
+      "name": "Tomato",
+      "description": "A red fruit commonly used as a vegetable in cooking",
+      "calories": 20,
+      "vitamins": ["Vitamin C", "Vitamin A"]
+    },
+    {
+      "name": "Turnip",
+      "description": "A root vegetable with white flesh and mild flavor",
+      "calories": 28,
+      "vitamins": ["Vitamin C"]
+    },
+    {
+      "name": "Watermelon",
+      "description": "A large fruit with sweet, juicy red flesh and black seeds",
+      "calories": 16,
+      "vitamins": ["Vitamin C", "Vitamin A"]
+    }
+  ]
+  
