@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block title %}Analytics | AgrowAssist{% endblock %}
+
+{% block content %}
+
+<div class="page-head">
+  <div class="container">
+    <div class="eyebrow" style="justify-content:center;"><span class="dot"></span>Live Dashboard</div>
+    <h1>Crop Analytics</h1>
+    <p>A closer look at the 22 crops behind our recommendations — nutrient levels, climate fit, and soil pH, side by side.</p>
+  </div>
+</div>
+
+<div class="container py-4">
+
+  <div class="row process-list" data-animate>
+    <div class="col-md-4 mb-4">
+      <div class="process-item">
+        <div class="process-icon"><i class="fas fa-chart-bar"></i></div>
+        <h4>Nutrient Levels</h4>
+        <p>Nitrogen, phosphorus, and potassium requirements compared across every crop.</p>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="process-item">
+        <div class="process-icon"><i class="fas fa-temperature-half"></i></div>
+        <h4>Climate Fit</h4>
+        <p>Temperature and humidity ranges plotted per crop, to see what conditions suit what.</p>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="process-item">
+        <div class="process-icon"><i class="fas fa-vial"></i></div>
+        <h4>Soil pH</h4>
+        <p>Average pH by crop, for a quick read on soil suitability before you plant.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-frame" data-animate>
+    <div class="dashboard-chrome">
+      <span class="chrome-dot red"></span>
+      <span class="chrome-dot yellow"></span>
+      <span class="chrome-dot green"></span>
+      <span class="chrome-label">AgrowAssist Crop Analysis</span>
+      
+        href="https://app.powerbi.com/view?r=eyJrIjoiYzc4YTM2NTMtZjZmNi00NDAzLTg0MzktZTY3YjQ0NzVkNTYzIiwidCI6IjBkMDRhNmQxLWFlNDctNGZjZS04MTgxLWMxYTQwNzI5MTNiYiJ9"
+        target="_blank"
+        rel="noopener"
+        class="chrome-open"
+      >
+        Open Full Screen <i class="fas fa-up-right-from-square"></i>
+      </a>
+    </div>
+
+    <div class="dashboard-iframe-wrap">
+      <iframe
+        title="AgrowAssist Crop Analytics"
+        src="https://app.powerbi.com/view?r=eyJrIjoiYzc4YTM2NTMtZjZmNi00NDAzLTg0MzktZTY3YjQ0NzVkNTYzIiwidCI6IjBkMDRhNmQxLWFlNDctNGZjZS04MTgxLWMxYTQwNzI5MTNiYiJ9"
+        allowfullscreen
+        loading="lazy"
+      ></iframe>
+    </div>
+  </div>
+
+  <p class="dashboard-note">Powered by Power BI — requires an internet connection to load.</p>
+
+</div>
+
+{% endblock %}
